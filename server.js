@@ -41,3 +41,15 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT,'0.0.0.0', () => console.log(`Server running on port ${PORT}`));
 
 
+// Health-check route
+app.get('/hi-there', (req, res) => {
+  const port = process.env.PORT || 5000;
+  const host = req.headers.host;
+  res.json({
+    message: 'Your app is running',
+    domain: host,
+    port: port
+  });
+});
+
+
