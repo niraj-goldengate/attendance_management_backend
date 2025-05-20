@@ -173,7 +173,7 @@ router.post('/forgot-password', async (req, res) => {
   const expires_at = new Date(Date.now() + 60*60*1000);
   await ResetToken.create({ user: user._id, token, expires_at });
 
-  const resetUrl = `${process.env.FRONTEND_URL || 'https://chimerical-sherbet-fb56ac.netlify.app'}/reset-password/${token}`;
+  const resetUrl = `https://chimerical-sherbet-fb56ac.netlify.app/reset-password/${token}`;
 
   // send email
   await transporter.sendMail({
