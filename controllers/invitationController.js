@@ -47,7 +47,7 @@ exports.sendInvitation = async (req, res) => {
     });
 
     // Prepare the registration URL (adjust FRONTEND_URL in your .env if needed)
-    const registrationUrl = `${process.env.FRONTEND_URL || 'http://localhost:5173'}/register-invite/${token}`;
+    const registrationUrl = `${process.env.FRONTEND_URL || 'https://chimerical-sherbet-fb56ac.netlify.app'}/register-invite/${token}`;
 
     // Send the email invitation.
     await transporter.sendMail({
